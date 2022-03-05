@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Karima Taha El Baba
+        202001602
+        Lab3
+    -->
+    <head>
+        <!-- Linking css file and creating web page title-->
+        <link rel="stylesheet" href="lab5.css" >
+        <script src="lab5.js" type="text/javascript"></script>  
+        <title>Pizza Order Form</title>
+    </head>
+    <body>
+        <header>
+            Pizza Order Form
+        </header>
+        <form id="Page1">
+            <fieldset>
+                <label for="size"> Size:</label> 
+                <input type="range" id="size" name="size" value="1" min="1" max="4" onchange="ChangePizzaSize()"><span id="psize">Small </span> <span id="price"> 6</span>$
+                <br/>
+                <img src="pizza.png" alt="pizza" width="100px" id="mypizza">
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>
+                    Meat Toppings (+2$ for each)
+                </legend>
+                <label><input type="checkbox" id="Pepperoni"/> Pepperoni </label><br/>
+                <label><input type="checkbox" id="Sausage"/> Sausage </label><br/>
+                <label><input type="checkbox" id="Beef"/> Ground Beef </label><br/>
+                <label><input type="checkbox" id="Anchovy"/> Anchovy </label><br/>
+                <label><input type="checkbox" id="Chicken"/> Chicken </label><br/>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Veggies (+1$ for each)
+                </legend>
+                <label><input type="checkbox" id="Tomatoes"/> Tomatoes</label> <br/>
+                <label><input type="checkbox" id="Onions"/> Onions </label><br/>
+                <label><input type="checkbox" id="Olives"/> Olives </label><br/>
+                <label><input type="checkbox" id="Mushrooms"/> Mushrooms </label><br/>
+                <label><input type="checkbox" id="Pineapple"/> Pineapple </label><br/>
+                <label><input type="checkbox" id="Spinach"/> Spinach </label><br/>
+                <label><input type="checkbox" id="Jalapeno"/> Jalapeno </label><br/>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Cheese
+                </legend>
+                <label><input type="radio" id="Regular" name="radio" checked> Regular Cheese </label><br/>
+                <label><input type="radio" id="None" name="radio"> No Cheese </label><br/>
+                <label><input type="radio" id="Extra" name="radio"> Extra Cheese ($3) </label><br/> 
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Payment
+                </legend>
+                <label><input type="radio" id="Cash" checked name="payment"> Cash</label>
+                <label><input type="radio" id="MasterCard" name="payment"> MasterCard</label>
+                <label><input type="radio" id="Visa" name="payment"> Visa</label>
+            </fieldset><br/>
+            <button type="button" onclick="gotoPage('form2')">Next</button>
+        </form><br/>
+        <form id="Page2">
+            
+            <label for="Fname">First Name:</label><br/>
+            <input type="text" id="Fname"><br/>
+            
+            <label for="Lname">Last Name:</label><br/>
+            <input type="text" id="Lname"><br/>
+            
+            <label for="Email">E-mail:</label><br/>
+            <input type="email" id="Email"><br/>
+            
+            <label for="number">Phone Number:</label><br/>
+            <input type="tel" id="pnum"><br/>
+
+            <label for="City">City: </label><br/>
+            <select name="City" id="city">
+                <option selected disabled hidden value=''>--Please select city-- </option>
+                <option value="Beirut"> Beirut </option>
+                <option value="Saida"> Saida</option>
+                <option value="Tyr"> Tyr </option>
+                <option value="Tripoli"> Tripoli </option>
+            </select><br/>
+
+            <label for="Address">Address: </label><br/>
+            <textarea name="address" rows="4" id="address"></textarea>
+            <br/>
+            <button type="button" onclick= "gotoPage('form1')"> Back </button>
+            <button type="button" onclick= "gotoPage('form3')"> Next </button>
+        </form>
+
+        <div id="OrderSummary">
+            <h1>Order Summary</h1>
+            <h2>Deliver to</h2>
+            <p id="dlvrTo"></p>
+            <h2>Order</h2>
+            <ul id="orderList"></ul>
+            <h2 id="total">Total</h2><br/>
+            <button type="button" onclick="gotoPage('form2')"> Back </button>           
+        </div>
+
+          
+    </body>
+    
+</html>
